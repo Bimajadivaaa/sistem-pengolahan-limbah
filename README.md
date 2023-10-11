@@ -1,13 +1,11 @@
-# Sample Hardhat Project
+# Smart Contract Sistem pengelolaan Limbah
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
-
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.ts
-```
+    yarn install
+    "compile": "npx hardhat compile",
+    "clean": "npx hardhat clean",
+    "deploy": "npx hardhat deploy --tags WasteProcessingSystem --network hardhat",
+    "nodes": "npx hardhat node",
+    "adds" : "npx hardhat run scripts/addWaste.ts --network localhost",
+    "edits" : "npx hardhat run scripts/editWaste.ts --network localhost",
+    "views" : "npx hardhat run scripts/viewWaste.ts --network localhost",
+    "deletes" : "npx hardhat run scripts/deleteWaste.ts --network localhost"
