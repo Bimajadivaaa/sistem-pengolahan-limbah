@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.18;
+pragma solidity 0.8.19;
 
 import "./WasteStorage.sol";
 
@@ -59,8 +59,6 @@ contract WasteOperations is WasteStorage {
         string memory _people
     ) public onlyAdmin {
         Waste storage waste = WasteRecord[_idWaste];
-        require(waste.idWaste != 0, "Data Limbah dengan ID tersebut tidak ada");
-        require(WasteRecord[_idWaste].idWaste == 0, "Data Limbah dengan ID tersebut sudah ada");
         require(bytes(_nameWaste).length > 0, "Nama Limbah Tidak Boleh Kosong");
         require(bytes(_typeOfWaste).length > 0, "Jenis Limbah Tidak Boleh Kosong");
         require(bytes(_volumeofWaste).length > 0, "Berat Limbah Tidak Boleh Kosong");

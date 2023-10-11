@@ -1,0 +1,48 @@
+{
+  "name": "sistem-pengolahan-limbah",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Bimajadivaaa/sistem-pengolahan-limbah.git",
+  "author": "Oktavianus Bima Jadiva <93313454+Bimajadivaaa@users.noreply.github.com>",
+  "license": "MIT",
+  "scripts": {
+    "compile": "npx hardhat compile",
+    "clean": "npx hardhat clean",
+    "deploy": "npx hardhat deploy --tags WasteProcessingSystem --network hardhat",
+    "nodes": "npx hardhat node",
+    "adds" : "npx hardhat run scripts/addWaste.ts --network localhost",
+    "edits" : "npx hardhat run scripts/editWaste.ts --network localhost",
+    "views" : "npx hardhat run scripts/viewWaste.ts --network localhost",
+    "deletes" : "npx hardhat run scripts/deleteWaste.ts --network localhost"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
+    "@nomicfoundation/hardhat-ethers": "^3.0.0",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "@nomicfoundation/hardhat-verify": "^1.0.0",
+    "@typechain/ethers-v6": "^0.4.0",
+    "@typechain/hardhat": "^8.0.0",
+    "@types/chai": "^4.2.0",
+    "@types/mocha": ">=9.1.0",
+    "@types/node": ">=16.0.0",
+    "chai": "^4.2.0",
+    "dotenv": "^16.3.1",
+    "ethers": "^6.4.0",
+    "hardhat": "^2.18.0",
+    "hardhat-contract-sizer": "^2.10.0",
+    "hardhat-deploy": "^0.11.42",
+    "hardhat-gas-reporter": "^1.0.8",
+    "hardhat-prettier": "^0.0.1",
+    "prettier-plugin-solidity": "^1.1.3",
+    "solidity-coverage": "^0.8.0",
+    "ts-node": ">=8.0.0",
+    "typechain": "^8.1.0",
+    "typescript": ">=4.5.0"
+  },
+  "dependencies": {
+    "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers",
+    "@openzeppelin/contracts": "^5.0.0",
+    "hardhat-deploy-ethers": "^0.4.1"
+  }
+}
