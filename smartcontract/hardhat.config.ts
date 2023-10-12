@@ -34,14 +34,14 @@ const config: HardhatUserConfig = {
         accountsBalance : "1000000000000000000000"
       }
     },
-    ganache : {
-      chainId : 5777,
-      url : "http://127.0.0.1:7545",
-      accounts : {
-        mnemonic : MNEMONIC_GANACHE,
-        accountsBalance : "1000000000000000000"
-      }
-    }
+    // ganache : {
+    //   chainId : 5777,
+    //   url : "http://127.0.0.1:7545",
+    //   accounts : {
+    //     mnemonic : MNEMONIC_GANACHE,
+    //     accountsBalance : "1000000000000000000"
+    //   }
+    // }
   },
   paths : {
     deployments: './deployments'
