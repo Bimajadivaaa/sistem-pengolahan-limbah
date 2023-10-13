@@ -3,16 +3,7 @@ import "@rainbow-me/rainbowkit/styles.css";
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import type { AppProps } from "next/app";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
-// import {
-//   arbitrum,
-//   goerli,
-//   mainnet,
-//   optimism,
-//   polygon,
-//   base,
-//   zora,
-//   polygonMumbai,
-// } from "wagmi/chains";
+
 import { publicProvider } from "wagmi/providers/public";
 
 const { chains, publicClient} = configureChains(
@@ -44,9 +35,11 @@ const { chains, publicClient} = configureChains(
   [publicProvider()]
 );
 
+const projectId = String(process.env.REACT_APP_WALLET_CONNECT)
+
 const { connectors } = getDefaultWallets({
   appName: "Sistem Pengolahan Limbah",
-  projectId: "YOUR_PROJECT_ID",
+  projectId,
   chains,
 });
 

@@ -1,10 +1,10 @@
 .container {
   padding: 0 2rem;
+  background-color: #f5c3c3;
 }
-
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 1rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -113,12 +113,29 @@
 
 .form input{
   margin-bottom: 10px;
-  width: 20%;
+  width: 21%;
   box-sizing: border-box;
+  color: #0d76fc;
+  border: 1px solid #ccc ;
+  border-radius: 5px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.3s;
+  padding: 8px;
+  background-color: #dcdcdc;
+}
+
+.form input:focus{
+  border-color: #007bff;
 }
 .form button {
   padding: 5px 10px;
   font-size: 12px;
-  width: 20%;
+  width: 21%;
+  border: 1px solid #007bff;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
 }
 

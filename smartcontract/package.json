@@ -10,17 +10,19 @@
     "clean": "npx hardhat clean",
     "deploy": "npx hardhat deploy --tags WasteProcessingSystem --network hardhat",
     "nodes": "npx hardhat node",
-    "adds" : "npx hardhat run scripts/addWaste.ts --network localhost",
-    "edits" : "npx hardhat run scripts/editWaste.ts --network localhost",
-    "views" : "npx hardhat run scripts/viewWaste.ts --network localhost",
-    "deletes" : "npx hardhat run scripts/deleteWaste.ts --network localhost"
+    "adds": "npx hardhat run scripts/addWaste.ts --network bsctestnet",
+    "edits": "npx hardhat run scripts/editWaste.ts --network localhost",
+    "views": "npx hardhat run scripts/viewWaste.ts --network localhost",
+    "deletes": "npx hardhat run scripts/deleteWaste.ts --network localhost"
+    
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
     "@nomicfoundation/hardhat-ethers": "^3.0.0",
     "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
     "@nomicfoundation/hardhat-toolbox": "^3.0.0",
-    "@nomicfoundation/hardhat-verify": "^1.0.0",
+    "@nomicfoundation/hardhat-verify": "^1.1.1",
+    "@nomiclabs/hardhat-etherscan": "^3.1.7",
     "@typechain/ethers-v6": "^0.4.0",
     "@typechain/hardhat": "^8.0.0",
     "@types/chai": "^4.2.0",

@@ -5,10 +5,13 @@ async function main() {
   const waste = await ethers.getContract<WasteProcessingSystem>(
     "WasteProcessingSystem"
   );
+  // const waste = await ethers.deployContract("WasteProcessingSystem");
+  // await waste.waitForDeployment();
+  // const wasteCheck = await waste.getAddress();
+  // console.log(`WasteProcessingSystem address: ${wasteCheck}`)
 
   const detailWaste = await waste.getWastesByID(1);
-  console.log("Data Berhasil Ditambahkan!")
-  console.log("Detail Limbah Yang Ingin Disalurkan");
+  console.log("Detail Limbah Yang Ingin Disalurkan : ");
   console.log("Nama Limbah :", detailWaste[1]);
   console.log("Jenis Limbah :", detailWaste[2]);
   console.log("Berat Limbah :", detailWaste[3]);

@@ -5,11 +5,14 @@ import "hardhat-deploy";
 import "hardhat-contract-sizer";
 import "hardhat-prettier";
 import "@nomiclabs/hardhat-ethers"
+import "@nomicfoundation/hardhat-verify";
+// import "@nomiclabs/hardhat-etherscan"
 
 dotenv.config();
 const {
   MNEMONIC, MNEMONIC_GANACHE
 } = process.env
+
 
 const config: HardhatUserConfig = {
   solidity: {
@@ -34,6 +37,11 @@ const config: HardhatUserConfig = {
         accountsBalance : "1000000000000000000000"
       }
     },
+    bsctestnet: {
+      url: process.env.BSC_TESTNET_URL || "",
+      accounts:
+        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
     // ganache : {
     //   chainId : 5777,
     //   url : "http://127.0.0.1:7545",
@@ -42,6 +50,12 @@ const config: HardhatUserConfig = {
     //     accountsBalance : "1000000000000000000"
     //   }
     // }
+  },
+  etherscan: {
+    apiKey: {
+      polygonMumbai: process.env.POLYGON_API_KEY as string,
+      bscTestnet: process.env.BSC_API_KEY as string,
+    },
   },
   paths : {
     deployments: './deployments'
