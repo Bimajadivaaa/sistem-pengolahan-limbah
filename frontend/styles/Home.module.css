@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
 .container {
   padding: 0 2rem;
   background-color: #f5c3c3;
@@ -19,6 +20,7 @@
   border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
+  margin-right: 7%;
 }
 
 .footer a {
@@ -103,6 +105,7 @@
 .form {
   display: flex;
   flex-direction: column;
+
   justify-content: center;
   margin-left: 40%;
 }
@@ -121,7 +124,8 @@
   box-sizing: border-box;
   outline: none;
   transition: border-color 0.3s;
-  padding: 8px;
+  padding-right: 0;
+  padding: 10px 0 8px 7px;
   background-color: #dcdcdc;
 }
 
@@ -137,5 +141,17 @@
   color: #fff;
   border-radius: 10px;
   cursor: pointer;
+  font-weight: bold;
 }
-
+.form label{
+  font-size: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 1000;
+}
+.metamaskLogo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 42%;
+}

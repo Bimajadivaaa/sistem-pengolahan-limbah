@@ -5,10 +5,10 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { useAccount, usePrepareContractWrite, useContractWrite } from "wagmi";
 import { parseUnits } from "viem";
-import Image from 'next/image'
-import metamask from '../assets/images/Metamask-icon.png'
+import Image from "next/image";
+import metamask from "../assets/images/Metamask-icon.png";
 
-import WasteProcessingSystemAbi from '../assets/WasteProcessingSystemAbi/WasteProcessingSystem.json';
+import WasteProcessingSystemAbi from "../assets/WasteProcessingSystemAbi/WasteProcessingSystem.json";
 
 const Home = () => {
   const [textId, setTextId] = useState("0");
@@ -51,7 +51,6 @@ const Home = () => {
 
   return (
     <div className={styles.container}>
-      
       <Head>
         <title>Sistem Pengelolaan Limbah</title>
         <meta
@@ -61,9 +60,15 @@ const Home = () => {
       </Head>
       <main className={styles.main}>
         <ConnectButton />
+        <Image 
+        src={metamask}
+        alt="metamask"
+        height={100}
+        className={styles.metamaskLogo}/>
         <h1 className={styles.title}>
           Selamat Datang di Sistem Pengelolaan Limbah
         </h1>
+        
         <form className={styles.form}>
           <label>ID : </label>
           <input
@@ -133,14 +138,14 @@ const Home = () => {
             Submit
           </button>
         </form>
-        <div>
+        {/* <div>
           <h1>Cari Limbah </h1>
           <label>ID Limbah : </label>
           <input type="text" placeholder="Masukkan ID" />
-        </div>
+        </div> */}
       </main>
       <footer className={styles.footer}>
-        <p>Made with ❤️</p>
+        <p>Made with @Bima Jadiva</p>
       </footer>
     </div>
   );
