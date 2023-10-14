@@ -18,22 +18,6 @@ const func:DeployFunction = async ({
     gasLimit: 4000000,
   });
   console.log("WasteProcessingSystem deployed at", WasteProcessingSystem.address);
-
-  // const WasteOperation = await deploy('WasteProcessingSystem', {
-  //   contract : 'WasteProcessingSystem',
-  //   from: deployer.address,
-  //   args: [],
-  //   gasLimit: 4000000,
-  // });
-  // console.log("WasteOperation deployed at ", WasteOperation.address);
-
-  // const WasteStorage = await deploy('WasteProcessingSystem', {
-  //   contract : 'WasteProcessingSystem',
-  //   from: deployer.address,
-  //   args: [],
-  //   gasLimit: 4000000,
-  // });
-  // console.log("WasteStorage deployed at ", WasteStorage.address);
 };
 func.tags = ['WasteProcessingSystem']
 export default func;

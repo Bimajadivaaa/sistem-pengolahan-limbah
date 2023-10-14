@@ -14,7 +14,6 @@
     "edits": "npx hardhat run scripts/editWaste.ts --network localhost",
     "views": "npx hardhat run scripts/viewWaste.ts --network localhost",
     "deletes": "npx hardhat run scripts/deleteWaste.ts --network localhost"
-    
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",

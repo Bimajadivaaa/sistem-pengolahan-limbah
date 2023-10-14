@@ -1,20 +1,18 @@
 import React, { useState } from "react";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { useAccount, usePrepareContractWrite, useContractWrite } from "wagmi";
-import { parseUnits } from "viem";
 import Image from "next/image";
 import metamask from "../assets/images/Metamask-icon.png";
 
 import WasteProcessingSystemAbi from "../assets/WasteProcessingSystemAbi/WasteProcessingSystem.json";
 
 const Home = () => {
+  const { address } = useAccount();
   const [textId, setTextId] = useState("0");
   const handleId = (e: any) => setTextId(e.target.value);
-  const { address } = useAccount();
-  const wasteDataAdress = "0x0668C35dCFc96EA6C209d5Ef4981CEd225CC642c";
+  const wasteDataAdress = "0x58c54cf83119843461e16056a2b2d6A5BBAb68ad";
   const [nameWasteAdd, setNameWasteAdd] = useState("");
   const handleName = (e: any) => setNameWasteAdd(e.target.value);
   const [typeWasteAdd, setTypeWasteAdd] = useState("");
@@ -45,6 +43,7 @@ const Home = () => {
       String(peopleWasteAdd),
     ],
   });
+  
   const { write: wasteDataWriteAdd } = useContractWrite(wasteDataAdd);
   console.log(wasteDataAdd);
   console.log(wasteDataWriteAdd);
@@ -60,22 +59,22 @@ const Home = () => {
       </Head>
       <main className={styles.main}>
         <ConnectButton />
-        <Image 
-        src={metamask}
-        alt="metamask"
-        height={100}
-        className={styles.metamaskLogo}/>
+        <Image
+          src={metamask}
+          alt="metamask"
+          height={100}
+          className={styles.metamaskLogo}
+        />
         <h1 className={styles.title}>
           Selamat Datang di Sistem Pengelolaan Limbah
         </h1>
-        
+
         <form className={styles.form}>
           <label>ID : </label>
           <input
             type="number"
             min="0"
             value={textId.toString()}
-            // onChange={(e) => setTextId(e.target.value)}
             onChange={handleId}
           />
           <label>Nama Limbah : </label>
@@ -83,7 +82,6 @@ const Home = () => {
             type="text"
             placeholder="Masukkan Nama Limbah"
             value={nameWasteAdd.toString()}
-            // onChange={(e) => setNameWasteAdd(e.target.value)}
             onChange={handleName}
           />
           <label>Jenis Limbah : </label>
@@ -91,7 +89,6 @@ const Home = () => {
             type="text"
             placeholder="Masukkan Jenis Limbah"
             value={typeWasteAdd.toString()}
-            // onChange={(e) => setTypeWasteAdd(e.target.value)}
             onChange={handleType}
           />
           <label>Berat Limbah : </label>
@@ -99,7 +96,6 @@ const Home = () => {
             type="text"
             placeholder="Masukkan Berat Limbah "
             value={weightWasteAdd.toString()}
-            // onChange={(e) => setWeightWasteAdd(e.target.value)}
             onChange={handleweight}
           />
           <label>Sumber Limbah : </label>
@@ -107,7 +103,6 @@ const Home = () => {
             type="text"
             placeholder="Masukkan Sumber Limbah"
             value={sourceWasteAdd.toString()}
-            // onChange={(e) => setSourceWasteAdd(e.target.value)}
             onChange={handleSource}
           />
           <label>Jumlah Limbah : </label>
@@ -115,7 +110,6 @@ const Home = () => {
             type="text"
             placeholder="Masukkan Jumlah Limbah"
             value={amountWasteAdd.toString()}
-            // onChange={(e) => setAmountWasteAdd(e.target.value)}
             onChange={handleAmount}
           />
           <label>Biaya Pengelolaan Limbah : </label>
@@ -123,7 +117,6 @@ const Home = () => {
             type="text"
             placeholder="Masukkan Biaya"
             value={costWasteAdd.toString()}
-            // onChange={(e) => setCostWasteAdd(e.target.value)}
             onChange={handleCost}
           />
           <label>Pihak Penyalur Limbah : </label>
@@ -131,21 +124,15 @@ const Home = () => {
             type="text"
             placeholder="Masukkan Pihak"
             value={peopleWasteAdd.toString()}
-            // onChange={(e) => setPeopleWasteAdd(e.target.value)}
             onChange={handlePeople}
           />
           <button type="submit" onClick={wasteDataWriteAdd}>
             Submit
           </button>
         </form>
-        {/* <div>
-          <h1>Cari Limbah </h1>
-          <label>ID Limbah : </label>
-          <input type="text" placeholder="Masukkan ID" />
-        </div> */}
       </main>
       <footer className={styles.footer}>
-        <p>Made with @Bima Jadiva</p>
+        <p>Made by @Bima Jadiva</p>
       </footer>
     </div>
   );

@@ -5,10 +5,6 @@ async function main() {
   const waste = await ethers.getContract<WasteProcessingSystem>(
     "WasteProcessingSystem"
   );
-  // const waste = await ethers.deployContract("WasteProcessingSystem");
-  // await waste.waitForDeployment();
-  // const wasteCheck = await waste.getAddress();
-  // console.log(`WasteProcessingSystem address: ${wasteCheck}`)
   const [admin] = await ethers.getSigners();
   const updateWaste = await waste
     .connect(admin)
